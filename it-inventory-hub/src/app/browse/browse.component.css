@@ -1,0 +1,11 @@
+:host {
+    display: block;
+    text-align: center;
+}
+
+.list-of-items {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 800px;
+}

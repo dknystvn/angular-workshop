@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    border-bottom: 1px dotted #ccc;
+    gap: 10px;
+    padding: 5px;
+}
+
+:host:hover {
+    background-color: #eee;
+}
+
+:host(:last-child) {
+    border: 0;
+}
+
+.item__id {
+    flex: 0 0 100px;
+    text-align: center;
+    border-right: 1px solid #ccc;
+}
+
+.item__name {
+    flex: 1;
+    text-align: left;
+}
