@@ -5,7 +5,7 @@
 
 - Install NPM + Angular Language Service + Angular Files extensions
 - Init Angular project with CLI
-- Install bootstrap, register in angular.json
+- Install bootstrap, bootstrap-icons, register them in angular.json
 - Install ESLint, prettier + add extensions
     - Init ESLint config
     - Share prettier config
@@ -21,3 +21,6 @@
 - Create components: Button, Menubar
 - Create routing: browse, create
 - Create basic layout with navigation
+- Create environment file
+- Create service
+- Add listing
