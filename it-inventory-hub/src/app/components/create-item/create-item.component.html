@@ -1,3 +1,12 @@
-<p>
-  create-item works!
-</p>
+<p>Add new item in your inventory!</p>
+
+<form class="new-item-form" [formGroup]="itemForm">
+  <ui-input placeholder="Device ID" [value]="itemForm.controls.id.value" formControlName="id" ngDefaultControl></ui-input>
+  <ui-input placeholder="Device Name" [value]="itemForm.controls.name.value" formControlName="name" ngDefaultControl></ui-input>
+
+  <ui-dropdown [options]="options" formControlName="type"></ui-dropdown>
+
+  <div class="new-item-form__bottom">
+    <ui-button label="New" type="primary" (click)="createNew()"></ui-button>
+  </div>
+</form>

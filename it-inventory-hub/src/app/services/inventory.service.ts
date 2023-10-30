@@ -18,7 +18,13 @@ export class InventoryService {
     );
   }
 
-  public removeItem(id: string): Observable<void> {
+  public create(newItem: InventoryItem): Observable<void> {
+    return this.httpClient
+      .post(`${environment.backendUrl}/${InventoryService.ENDPOINT_URL}`, newItem)
+      .pipe(ignoreElements());
+  }
+
+  public remove(id: string): Observable<void> {
     return this.httpClient
       .delete<ReadonlyArray<InventoryItem>>(
         `${environment.backendUrl}/${InventoryService.ENDPOINT_URL}/${id}`,

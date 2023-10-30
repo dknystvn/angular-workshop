@@ -22,7 +22,7 @@ export class BrowseComponent implements OnInit {
   }
 
   public onDelete(itemId: string) {
-    this.inventory.removeItem(itemId).subscribe({
+    this.inventory.remove(itemId).subscribe({
       complete: () => {
         this.loadItems();
       },

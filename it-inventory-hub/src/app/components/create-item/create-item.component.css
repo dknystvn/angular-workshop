@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.new-item-form__bottom {
+  margin-top: 10px;
+}
+
+ui-input {
+  margin: 10px;
+}

@@ -1,7 +1,9 @@
 interface InventoryItem {
   id: string;
   name: string;
-  type: 'headphones' | 'laptop' | 'screen';
+  type: InventoryItemType;
 }
 
-export { InventoryItem };
+type InventoryItemType = 'headphones' | 'laptop' | 'screen';
+
+export { InventoryItem, InventoryItemType };

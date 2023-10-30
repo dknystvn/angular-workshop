@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { ButtonType } from './button.types';
 
 @Component({
   selector: 'ui-button',
@@ -8,6 +9,9 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 export class ButtonComponent {
   @Input()
   public label?: string;
+
+  @Input()
+  public type: ButtonType = 'info';
 
   @Output()
   public onTriggered = new EventEmitter<boolean>();
