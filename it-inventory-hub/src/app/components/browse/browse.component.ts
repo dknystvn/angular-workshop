@@ -38,12 +38,16 @@ export class BrowseComponent implements OnInit {
   }
 
   public onDelete(itemId: string) {
-    this.inventory.remove(itemId).subscribe({
-      complete: () => {
-        this.loadItems();
-      },
-      error: console.log,
-    });
+    const deleteForSure = confirm('Are you sure you want to delete this item?');
+
+    if (deleteForSure) {
+      this.inventory.remove(itemId).subscribe({
+        complete: () => {
+          this.loadItems();
+        },
+        error: console.log,
+      });
+    }
   }
 
   private loadItems() {
