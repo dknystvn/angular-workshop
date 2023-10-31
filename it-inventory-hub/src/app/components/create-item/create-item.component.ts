@@ -16,6 +16,7 @@ export class CreateItemComponent {
     return [
       { name: 'Headphones', value: 'headphones' },
       { name: 'Screen', value: 'screen' },
+      { name: 'Laptop', value: 'laptop' },
     ];
   }
 
@@ -25,7 +26,6 @@ export class CreateItemComponent {
 
   public constructor(private readonly inventory: InventoryService) {
     this._itemForm = new FormGroup<ItemForm>({
-      id: new FormControl('', { nonNullable: true }),
       name: new FormControl('', { nonNullable: true }),
       type: new FormControl('headphones', { nonNullable: true }),
     });
@@ -34,7 +34,6 @@ export class CreateItemComponent {
   public createNew(): void {
     this.inventory
       .create({
-        id: this._itemForm.controls.id.value,
         name: this._itemForm.controls.name.value,
         type: this._itemForm.controls.type.value,
       })
@@ -48,7 +47,6 @@ export class CreateItemComponent {
 }
 
 interface ItemForm {
-  id: FormControl<string>;
   name: FormControl<string>;
   type: FormControl<InventoryItemType>;
 }

@@ -11,6 +11,6 @@ export class DropdownComponent {
   public value?: string;
 
   @Input()
-  public options?: ReadonlyArray<DropDownItem<string | number>>;
+  public options?: ReadonlyArray<DropDownItem<unknown>>;
 }
 

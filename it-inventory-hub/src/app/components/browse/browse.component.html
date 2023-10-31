@@ -1,9 +1,9 @@
 <p appHoverHighlight>Owned items in the inventory</p>
 
 <div class="list-of-items">
-  <ui-inventory-item
+  <app-inventory-item
     *ngFor="let item of allItems | async"
     [item]="item"
     (delete)="onDelete($event)"
-  ></ui-inventory-item>
+  ></app-inventory-item>
 </div>

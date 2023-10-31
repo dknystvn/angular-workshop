@@ -18,9 +18,12 @@ export class InventoryService {
     );
   }
 
-  public create(newItem: InventoryItem): Observable<void> {
+  public create(newItem: Omit<InventoryItem, 'id'>): Observable<void> {
     return this.httpClient
-      .post(`${environment.backendUrl}/${InventoryService.ENDPOINT_URL}`, newItem)
+      .post(`${environment.backendUrl}/${InventoryService.ENDPOINT_URL}`, {
+        ...newItem,
+        id: this.generateId(),
+      })
       .pipe(ignoreElements());
   }
 
@@ -30,5 +33,11 @@ export class InventoryService {
         `${environment.backendUrl}/${InventoryService.ENDPOINT_URL}/${id}`,
       )
       .pipe(ignoreElements());
+  }
+
+  private generateId(): string {
+    const randomFourDigitNumber = Math.floor(1000 + Math.random() * 9000);
+
+    return `NEW-` + randomFourDigitNumber.toString();
   }
 }

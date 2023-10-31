@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { InventoryItem } from './inventory-item.types';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { InventoryItem } from '../../../models/inventory-item.types';
 
 @Component({
-  selector: 'ui-inventory-item',
+  selector: 'app-inventory-item',
   templateUrl: './inventory-item.component.html',
   styleUrls: ['./inventory-item.component.css'],
 })
