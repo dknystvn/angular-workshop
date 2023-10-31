@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DropDownItem } from './dropdown.types';
 
 @Component({
@@ -11,6 +11,17 @@ export class DropdownComponent {
   public value?: string;
 
   @Input()
-  public options?: ReadonlyArray<DropDownItem<unknown>>;
+  public options?: ReadonlyArray<DropDownItem>;
+
+  @Output()
+  public selectionChanged = new EventEmitter<DropDownItem>();
+
+  public onSelectionChanged(event?: Event): void {
+    const selectedValue = (event?.target as HTMLSelectElement).value;
+
+    if ((event?.target as HTMLSelectElement).value) {
+      this.selectionChanged.emit(this.options?.find((option) => option.value === selectedValue));
+    }
+  }
 }
 

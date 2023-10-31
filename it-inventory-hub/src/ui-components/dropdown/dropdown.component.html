@@ -1,7 +1,7 @@
-<select>
+<select (change)="onSelectionChanged($event)">
   <option 
     *ngFor="let option of options" 
-    value="{{ option.value }}" 
+    value="{{ option.value }}"
     [attr.selected]="value === option.value ? 'selected' : null"
   >
     {{ option.name }}

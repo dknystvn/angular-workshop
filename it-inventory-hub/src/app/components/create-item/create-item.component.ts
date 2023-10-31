@@ -12,7 +12,7 @@ import { InventoryService } from 'src/app/services/inventory.service';
 export class CreateItemComponent {
   private _itemForm: FormGroup<ItemForm>;
 
-  public get options(): ReadonlyArray<DropDownItem<InventoryItemType>> {
+  public get options(): ReadonlyArray<DropDownItem> {
     return [
       { name: 'Headphones', value: 'headphones' },
       { name: 'Screen', value: 'screen' },

@@ -1,6 +1,6 @@
-interface DropDownItem<T> {
+interface DropDownItem {
   name: string;
-  value: T;
+  value: string;
 }
 
 export { DropDownItem };
