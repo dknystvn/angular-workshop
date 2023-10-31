@@ -4,6 +4,10 @@
   <app-inventory-item
     *ngFor="let item of allItems | async"
     [item]="item"
+    [isSelected]="isItemSelected(item.id)"
+    (itemSelect)="onSelect($event)"
     (delete)="onDelete($event)"
   ></app-inventory-item>
 </div>
+
+<app-item-preview [itemId]="(selectedItemId | async) ?? undefined"></app-item-preview>

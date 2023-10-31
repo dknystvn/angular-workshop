@@ -9,6 +9,10 @@
     background-color: #eee;
 }
 
+:host(.selected) {
+    background-color: #d7f1fd;
+}
+
 :host(:last-child) {
     border: 0;
 }

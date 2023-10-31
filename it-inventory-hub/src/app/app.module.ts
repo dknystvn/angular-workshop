@@ -21,6 +21,7 @@ import {
 } from '@ngx-translate/core';
 import { CustomTranslationLoader } from './localization/custom-translation-loader';
 import { translateFactory } from './localization/translate-factory';
+import { ItemPreviewComponent } from './components/browse/item-preview/item-preview.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { translateFactory } from './localization/translate-factory';
     BrowseComponent,
     LoginComponent,
     CreateItemComponent,
+    ItemPreviewComponent,
     NamePipe,
     InventoryItemComponent,
     HoverHighlightDirective,

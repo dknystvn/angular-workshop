@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ignoreElements, noop, Observable } from 'rxjs';
+import { ignoreElements, noop, Observable, share } from 'rxjs';
 import { InventoryItem } from '../models/inventory-item.types';
 import { environment } from '../../environments/environment';
 
@@ -15,6 +15,12 @@ export class InventoryService {
   public findAll(): Observable<ReadonlyArray<InventoryItem>> {
     return this.httpClient.get<ReadonlyArray<InventoryItem>>(
       `${environment.backendUrl}/${InventoryService.ENDPOINT_URL}`,
+    );
+  }
+
+  public findBy(id: string): Observable<InventoryItem> {
+    return this.httpClient.get<InventoryItem>(
+      `${environment.backendUrl}/${InventoryService.ENDPOINT_URL}/${id}`,
     );
   }
 
