@@ -11,3 +11,8 @@
 ui-input {
   margin: 10px;
 }
+
+.invalid-form {
+  color: #b92525;
+  font-size: 12px;
+}

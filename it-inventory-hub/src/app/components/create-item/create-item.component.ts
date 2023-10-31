@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { InventoryItemType } from 'src/app/models/inventory-item.types';
 import { DropDownItem } from 'ui-components';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { InventoryService } from 'src/app/services/inventory.service';
 
 @Component({
@@ -26,23 +26,28 @@ export class CreateItemComponent {
 
   public constructor(private readonly inventory: InventoryService) {
     this._itemForm = new FormGroup<ItemForm>({
-      name: new FormControl('', { nonNullable: true }),
+      name: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.minLength(4)],
+      }),
       type: new FormControl('headphones', { nonNullable: true }),
     });
   }
 
   public createNew(): void {
-    this.inventory
-      .create({
-        name: this._itemForm.controls.name.value,
-        type: this._itemForm.controls.type.value,
-      })
-      .subscribe({
-        complete: () => {
-          this._itemForm.reset();
-        },
-        error: console.log,
-      });
+    if (this._itemForm.valid) {
+      this.inventory
+        .create({
+          name: this._itemForm.controls.name.value,
+          type: this._itemForm.controls.type.value,
+        })
+        .subscribe({
+          complete: () => {
+            this._itemForm.reset();
+          },
+          error: console.log,
+        });
+    }
   }
 }
 
