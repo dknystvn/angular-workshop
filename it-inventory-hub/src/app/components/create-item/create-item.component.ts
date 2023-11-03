@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { InventoryItemType } from 'src/app/models/inventory-item.types';
-import { DropDownItem } from 'ui-components';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { InventoryService } from 'src/app/services/inventory.service';
+import { InventoryItemType } from '../../models/inventory-item.types';
+import { InventoryService } from '../../services/inventory.service';
+import { DropDownItem } from 'ui-components';
 
 @Component({
   selector: 'app-create-item',

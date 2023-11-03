@@ -4,7 +4,7 @@ import { Directive, HostListener, ElementRef, Renderer2 } from '@angular/core';
   selector: '[appHoverHighlight]',
 })
 export class HoverHighlightDirective {
-  constructor(
+  public constructor(
     private readonly element: ElementRef,
     private readonly renderer: Renderer2,
   ) {}

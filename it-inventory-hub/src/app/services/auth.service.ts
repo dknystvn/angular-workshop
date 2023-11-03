@@ -10,7 +10,7 @@ export class AuthService {
     return this._loggedIn;
   }
 
-  public logIn() {
+  public logIn(): void {
     this._loggedIn = true;
   }
 }

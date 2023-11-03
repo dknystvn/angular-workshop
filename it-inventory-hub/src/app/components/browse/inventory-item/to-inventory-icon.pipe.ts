@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { InventoryItemType } from 'src/app/models/inventory-item.types';
+import { InventoryItemType } from '../../../models/inventory-item.types';
 
 @Pipe({
   name: 'toInventoryTypeIcon',

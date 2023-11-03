@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ignoreElements, noop, Observable, share } from 'rxjs';
+import { ignoreElements, Observable } from 'rxjs';
 import { InventoryItem } from '../models/inventory-item.types';
 import { environment } from '../../environments/environment';
 

@@ -4,11 +4,10 @@ import {
   Input,
   OnChanges,
   OnInit,
-  SimpleChanges,
 } from '@angular/core';
-import { EMPTY, Observable, first, map, take, tap } from 'rxjs';
-import { InventoryItem } from 'src/app/models/inventory-item.types';
-import { InventoryService } from 'src/app/services/inventory.service';
+import { EMPTY, Observable } from 'rxjs';
+import { InventoryItem } from '../../../models/inventory-item.types';
+import { InventoryService } from '../../../services/inventory.service';
 
 @Component({
   selector: 'app-item-preview',
@@ -34,7 +33,7 @@ export class ItemPreviewComponent implements OnInit, OnChanges {
     }
   }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     if (this.itemId) {
       this._item = this.inventory.findBy(this.itemId);
     }

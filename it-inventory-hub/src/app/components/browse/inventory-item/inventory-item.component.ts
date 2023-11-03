@@ -32,12 +32,12 @@ export class InventoryItemComponent implements OnInit {
     if (!this.item) throw new Error('Item is not defined.');
   }
 
-  public onDelete() {
+  public onDelete(): void {
     this.delete.emit(this.item.id);
   }
 
   @HostListener('click')
-  public onSelect() {
+  public onSelect(): void {
     this.itemSelect.emit(this.item.id);
   }
 }
