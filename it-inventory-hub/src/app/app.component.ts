@@ -8,6 +8,8 @@ import { DropDownItem } from 'ui-components';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  private _Asdf_asd: string;
+
   public constructor(private readonly translation: TranslateService) {}
 
   public languageChanged(itemSelected: DropDownItem): void {
