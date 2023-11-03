@@ -1,3 +1,3 @@
-type ButtonType = 'primary' | 'info';
+type ButtonEmphasis = 'primary' | 'secondary';
 
-export { ButtonType };
+export { ButtonEmphasis };

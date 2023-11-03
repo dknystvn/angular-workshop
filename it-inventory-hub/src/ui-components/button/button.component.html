@@ -1,1 +1,3 @@
-<button type="button" (click)="onClick()" class="btn btn-{{type}}">{{ label }}</button>
+<button type="button" (click)="onClick()" class="btn btn-{{ emphasis | toBootstrapClass }}">
+    <ng-content></ng-content>
+</button>

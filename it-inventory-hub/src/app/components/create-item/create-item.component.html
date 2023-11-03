@@ -6,7 +6,7 @@
   <ui-dropdown [options]="options" [value]="itemForm.controls.type.value" formControlName="type" ngDefaultControl></ui-dropdown>
 
   <div class="new-item-form__bottom">
-    <ui-button label="New" type="primary" (click)="createNew()"></ui-button>
+    <ui-button emphasis="primary" (pushed)="createNew()">New</ui-button>
 
     <div class="invalid-form" *ngIf="itemForm.controls.name.errors?.['required']">
       Device name is required.
