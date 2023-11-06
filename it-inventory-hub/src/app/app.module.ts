@@ -10,7 +10,7 @@ import {
 } from '@ngx-translate/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HoverHighlightDirective } from './directives/hover-highlight.directive';
+import { ClickLoggerDirective } from './directives/click-logger.directive';
 import { BrowseComponent } from './components/browse/browse.component';
 import { CreateItemComponent } from './components/create-item/create-item.component';
 import { InventoryService } from './services/inventory.service';
@@ -32,7 +32,7 @@ import { UiComponentsModule } from 'ui-components';
     ItemPreviewComponent,
     NamePipe,
     InventoryItemComponent,
-    HoverHighlightDirective,
+    ClickLoggerDirective,
   ],
   imports: [
     BrowserModule,

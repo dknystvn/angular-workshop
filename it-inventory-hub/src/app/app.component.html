@@ -1,6 +1,6 @@
 <ui-menu-bar>
-    <ui-button emphasis="secondary" routerLink="browse">Browse</ui-button>
-    <ui-button emphasis="secondary" routerLink="create">Create</ui-button>
+    <ui-button emphasis="secondary" routerLink="browse" appClickLogger>Browse</ui-button>
+    <ui-button emphasis="secondary" routerLink="create" appClickLogger>Create</ui-button>
     <ui-dropdown 
         [options]="[{ name: 'English', value: 'en'}, {name: 'German', value: 'de' }]"
         (selectionChanged)="languageChanged($event)"
