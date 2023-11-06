@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { InventoryItemType } from '../../models/inventory-item.types';
 import { InventoryService } from '../../services/inventory.service';
@@ -10,6 +10,8 @@ import { DropDownItem } from 'ui-components';
   styleUrls: ['./create-item.component.css'],
 })
 export class CreateItemComponent {
+  @ViewChild('myModalComp')
+  public myModal!: ElementRef;
   private _itemForm: FormGroup<ItemForm>;
 
   public get options(): ReadonlyArray<DropDownItem> {
@@ -44,10 +46,19 @@ export class CreateItemComponent {
         .subscribe({
           complete: () => {
             this._itemForm.reset();
+            this.openModal();
           },
           error: console.log,
         });
     }
+  }
+
+  public openModal(): void {
+    this.myModal.nativeElement.style.display = 'block';
+  }
+
+  public closeModal(): void {
+    this.myModal.nativeElement.style.display = 'none';
   }
 }
 
@@ -55,4 +66,3 @@ interface ItemForm {
   name: FormControl<string>;
   type: FormControl<InventoryItemType>;
 }
-
