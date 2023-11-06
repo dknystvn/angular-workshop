@@ -13,7 +13,7 @@ export class AuthGuard {
   ) {}
 
   public canActivate(): Observable<boolean | UrlTree> {
-    if (!this.auth.loggenId) {
+    if (!this.auth.loggedId) {
       return of(this.router.createUrlTree(['login']));
     }
 
