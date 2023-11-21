@@ -8,7 +8,7 @@ import {
   TranslateService,
   TranslateLoader,
 } from '@ngx-translate/core';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { ClickLoggerDirective } from './directives/click-logger.directive';
 import { BrowseComponent } from './components/browse/browse.component';
